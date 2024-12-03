@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Georgian";
+  src: url("./Components/CSS/fonts/bpg_extrasquare_mtavruli_2009.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "Georgian", sans-serif;
+}

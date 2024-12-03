@@ -1,0 +1,29 @@
+.infos-container{
+    width: 100%;
+    min-height: 400px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.infos-list{
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.infos-card{
+    width: 350px;
+    min-height: 300px;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+}
