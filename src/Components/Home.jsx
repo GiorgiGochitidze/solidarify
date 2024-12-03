@@ -1,6 +1,9 @@
 import LandingPage from "./LandingPage";
 import './CSS/home.css'
 import InfosPage from "./InfosPage";
+import Locations from "./Locations";
+import LawyerNums from "./LawyerNums";
+import ArrestedLost from "./ArrestedLost";
 
 
 const Home = () => {
@@ -9,6 +12,12 @@ const Home = () => {
             <LandingPage />
 
             <InfosPage />
+
+            <Locations />
+
+            <LawyerNums />
+
+            <ArrestedLost />
         </main>
      );
 }

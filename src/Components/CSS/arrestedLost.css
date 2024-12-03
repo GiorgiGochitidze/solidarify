@@ -1,0 +1,29 @@
+.arrested-lost-container{
+    width: 100%;
+    min-height: 400px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.peoplesCard-container{
+    width: 350px;
+    min-height: 300px;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset rgba(0, 0, 0, 0.35) 0px 0px 15px;
+    border-radius: 20px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.peoplesCard-container img{
+    width: 200px;
+    height: 200px;
+}

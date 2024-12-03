@@ -1,0 +1,33 @@
+.locations-container{
+    width: 100%;
+    min-height: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.places-container{
+    width: 100%;
+    min-height: 400px;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.location-description{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.map-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: right;
+}
