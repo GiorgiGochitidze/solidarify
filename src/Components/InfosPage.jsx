@@ -1,12 +1,15 @@
 import "./CSS/infosPage.css";
 import protest2 from "../assets/protest2.jpg";
-import { useState } from "react";
 import InfosCard from "./InfosCard";
 
 const InfosPage = () => {
+  const location = window.location.pathname === "/InfosPage";
 
   return (
-    <div className="infos-container">
+    <div
+      style={location ? { marginTop: "90px" } : {}}
+      className="infos-container"
+    >
       <h1>ინფორმაციები და განცხადებები აქციის შესახებ:</h1>
 
       <div className="infos-list">

@@ -2,8 +2,11 @@ import "./CSS/locations.css";
 import LocationsCard from "./LocationsCard";
 
 const Locations = () => {
+
+  const location = window.location.pathname === "/Locations";
+
   return (
-    <div className="locations-container">
+    <div style={location ? { marginTop: "90px" } : {}} className="locations-container">
       <h1>ლოკაციები:</h1>
 
       <LocationsCard

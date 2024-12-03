@@ -3,8 +3,13 @@ import PeoplesCard from "./PeoplesCard";
 import man from "../assets/man.png";
 
 const ArrestedLost = () => {
+  const location = window.location.pathname === "/Lost&Arrested";
+
   return (
-    <div className="arrested-lost-container">
+    <div
+      style={location ? { marginTop: "90px" } : {}}
+      className="arrested-lost-container"
+    >
       <h1 style={{ textAlign: "center" }}>
         დაკავებული და დაკარგული ადამიანების სია:
       </h1>
