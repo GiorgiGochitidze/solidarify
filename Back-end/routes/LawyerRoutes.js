@@ -1,8 +1,19 @@
 const express = require('express')
-const { getLawyers } = require('../controllers/LawyerController')
+const { getLawyers,createLawyer,deleteLawyer } = require('../controllers/LawyerController')
+const {protect} = require('../controllers/authController')
+
 
 const router = express.Router()
 
-router.get('/', getLawyers)
+router.use(protect)
+
+router
+    .route('/')
+    .get(getLawyers)
+    .post(createLawyer)
+
+router
+    .route('/:id')
+    .delete(deleteLawyer)
 
 module.exports = router

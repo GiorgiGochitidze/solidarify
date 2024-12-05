@@ -6,7 +6,7 @@ const Lawyer = require('../models/Lawyer')
 //     .catch((error) => res.status(500).json({ message: 'Error fetching lawyers' }))
 // }
 
-exports.getLawyer = catchAsync(async(req,res,next)=>{
+exports.getLawyers = catchAsync(async(req,res,next)=>{
   const doc = await Lawyer.find()
 
   res.status(200).json({
