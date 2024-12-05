@@ -22,6 +22,7 @@ mongoose
 const app = express()
 app.use(express.json())
 
+app.use('/api/users,')
 app.use('/api/infos', infoRoutes)
 app.use('/api/locations', locationRoutes)
 app.use('/api/missing', missingRoutes)
