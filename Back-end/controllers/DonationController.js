@@ -6,7 +6,7 @@ const Donation = require('../models/Donation')
 //     .catch((error) => res.status(500).json({ message: 'Error fetching donations' }))
 // }
 
-exports.getDonation = catchAsync(async(req,res,next)=>{
+exports.getDonations = catchAsync(async(req,res,next)=>{
   const doc = await Donation.find()
 
   res.status(200).json({

@@ -1,4 +1,5 @@
 const { getInfos,deleteInfo,createInfo } = require('../controllers/infoController')
+const {protect} = require('../controllers/authController')
 const express = require('express')
 
 const router = express.Router()

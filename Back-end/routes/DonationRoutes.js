@@ -1,8 +1,19 @@
 const express = require('express')
-const { getDonations } = require('../controllers/DonationController')
+const { getDonations,deleteDonation,createDonation } = require('../controllers/DonationController')
+const {protect} = require('../controllers/authController')
+
 
 const router = express.Router()
 
-router.get('/', getDonations)
+router.use(protect)
+
+router
+    .route('/')
+    .get(getDonations)
+    .post(createDonation)
+
+router
+    .route('/')
+    .delete(deleteDonation)
 
 module.exports = router
