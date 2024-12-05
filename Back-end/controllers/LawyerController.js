@@ -26,7 +26,7 @@ exports.deleteLawyer = catchAsync(async(req,res,next)=>{
     return next(new AppError('no document found with that id',404))
   }
 
-  res.status(204).josn({
+  res.status(204).json({
     status:'success'
   })
 
