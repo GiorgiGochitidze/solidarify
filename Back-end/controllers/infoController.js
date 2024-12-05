@@ -1,5 +1,6 @@
 const Info = require('../models/Info')
-
+const AppError = require("../utils/appError");
+const catchAsync = require("../utils/catchAsync");
 // const getInfos = function (req, res) {
 //   Info.find()
 //     .then((infos) => res.status(200).json(infos))

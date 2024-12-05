@@ -1,4 +1,6 @@
 const Lawyer = require('../models/Lawyer')
+const AppError = require("../utils/appError");
+const catchAsync = require("../utils/catchAsync");
 
 // const getLawyers = function (req, res) {
 //   Lawyer.find()
