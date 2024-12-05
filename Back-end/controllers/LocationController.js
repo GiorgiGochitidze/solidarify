@@ -2,11 +2,11 @@ const Location = require('../models/Location')
 const AppError = require("../utils/appError");
 const catchAsync = require("../utils/catchAsync");
 
-const getLocations = function (req, res) {
-  Location.find()
-    .then((locations) => res.status(200).json(locations))
-    .catch((error) => res.status(500).json({ message: 'Error fetching locations' }))
-}
+// const getLocations = function (req, res) {
+//   Location.find()
+//     .then((locations) => res.status(200).json(locations))
+//     .catch((error) => res.status(500).json({ message: 'Error fetching locations' }))
+// }
 
 exports.getLocations = catchAsync(async(req,res,next)=>{
   const doc = await Location.find()
@@ -44,6 +44,6 @@ exports.createLocation = catchAsync(async(req,res,next)=>{
 
 })
 
-module.exports = {
-  getLocations
-}
+// module.exports = {
+//   getLocations
+// }
