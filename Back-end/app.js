@@ -20,7 +20,9 @@ mongoose
 
 
 const app = express()
+const PORT = 5000
 app.use(express.json())
+
 
 app.use('/api/infos', infoRoutes)
 app.use('/api/locations', locationRoutes)
@@ -28,4 +30,8 @@ app.use('/api/missing', missingRoutes)
 app.use('/api/lawyers', lawyerRoutes)
 app.use('/api/donations', donationRoutes)
 
-module.exports = app
+
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
