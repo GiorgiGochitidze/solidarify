@@ -6,6 +6,7 @@ const locationRoutes = require('./routes/LocationRoutes')
 const missingRoutes = require('./routes/MissingRoutes')
 const lawyerRoutes = require('./routes/LawyerRoutes')
 const donationRoutes = require('./routes/DonationRoutes')
+const userRoutes = require('./routes/userRoutes')
 
 // Database
 const mongoose = require('mongoose')
@@ -22,7 +23,7 @@ mongoose
 const app = express()
 app.use(express.json())
 
-app.use('/api/users,')
+app.use('/api/users',userRoutes)
 app.use('/api/infos', infoRoutes)
 app.use('/api/locations', locationRoutes)
 app.use('/api/missing', missingRoutes)

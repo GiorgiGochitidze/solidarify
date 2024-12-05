@@ -8,3 +8,4 @@ router
     .route('/login')
     .get(login)
 
+module.exports = router
