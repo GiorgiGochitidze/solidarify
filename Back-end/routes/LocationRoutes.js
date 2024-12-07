@@ -9,7 +9,7 @@ router.use(protect)
 
 router
     .route('/')    
-    .get(getLocations)
+    .post(getLocations)
     .post(createLocation)
 
 router

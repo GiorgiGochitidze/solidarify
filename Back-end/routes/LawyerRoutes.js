@@ -9,7 +9,7 @@ router.use(protect)
 
 router
     .route('/')
-    .get(getLawyers)
+    .post(getLawyers)
     .post(createLawyer)
 
 router

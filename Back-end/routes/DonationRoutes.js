@@ -9,7 +9,7 @@ router.use(protect)
 
 router
     .route('/')
-    .get(getDonations)
+    .post(getDonations)
     .post(createDonation)
 
 router

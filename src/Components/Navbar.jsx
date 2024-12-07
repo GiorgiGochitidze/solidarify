@@ -16,8 +16,8 @@ const Navbar = () => {
                 <Link style={LinkStyles} to='/InfosPage'><p>ინფორმაციები</p></Link>
                 <Link style={LinkStyles} to='/Locations'><p>ლოკაციები</p></Link>
                 <Link style={LinkStyles} to='/LawyerNums'><p>იურისტების ნომრები</p></Link>
-                <Link style={LinkStyles} to='/Lost&Arrested'><p>დაკარგული/დაკავებულები</p></Link>
                 <Link style={LinkStyles} to='#'><p>კონტაქტი</p></Link>
+                <Link style={LinkStyles} to='/#'><p>შესვლა</p></Link>
             </nav>
         </header>
      );

@@ -1,11 +1,11 @@
-const express = require('express')
+const express = require('express');
 
-const {login} = require('../controllers/userController')
+const { login } = require('../controllers/userController');
 
-const router = express.Router()
+const router = express.Router();
 
 router
     .route('/login')
-    .get(login)
+    .post(login);
 
-module.exports = router
+module.exports = router;

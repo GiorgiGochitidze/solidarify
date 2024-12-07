@@ -8,7 +8,7 @@ router.use(protect)
 
 router
     .route('/')
-    .get(getInfos)
+    .post(getInfos)
     .post(createInfo)
 
 router

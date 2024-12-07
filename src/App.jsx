@@ -7,8 +7,30 @@ import InfosPage from "./Components/InfosPage";
 import Locations from "./Components/Locations";
 import LawyerNums from "./Components/LawyerNums";
 import ArrestedLost from "./Components/ArrestedLost";
+import { useEffect } from "react";
+import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 
 function App() {
+
+  useEffect(() => {
+    setTimeout(() => {
+
+      axios
+      .post("http://localhost:5000/api/users/login", {
+        email: "solidarify@gmail.com",
+        password: "1234",
+      })
+      .then((response) => {
+        console.log(jwtDecode(response.data.token));
+      })
+      .catch((err) => {
+        console.log("Something went wrong: ", err);
+      });
+    }, 1000)
+    }, []);
+  
+
   return (
     <Router>
       <Navbar />
