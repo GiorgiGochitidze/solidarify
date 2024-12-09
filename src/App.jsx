@@ -10,6 +10,7 @@ import ArrestedLost from "./Components/ArrestedLost";
 import { useEffect } from "react";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
+import LogIn from "./Components/LogIn";
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
         <Route path="/Locations" element={<Locations />} />
         <Route path="/LawyerNums" element={<LawyerNums />} />
         <Route path="/Lost&Arrested" element={<ArrestedLost />} />
+        <Route path="/Login" element = {<LogIn/>} />
       </Routes>
     </Router>
   );

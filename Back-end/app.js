@@ -16,7 +16,12 @@ const app = express()
 const mongoose = require('mongoose')
 
 // Enable CORS for all origins
-app.use(cors());
+const corsOptions = {
+  origin: 'http://localhost:5173',  // Replace with your front-end URL
+  credentials: true,  // Allows cookies and headers to be sent
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 

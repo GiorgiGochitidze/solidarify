@@ -25,9 +25,16 @@ exports.login = catchAsync(async (req, res, next) => {
   
     const token = signToken()
   
+    res.cookie('authToken', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production', // Use HTTPS in production
+      sameSite: 'Strict', // Prevent CSRF
+      // maxAge: 60 * 60 * 1000, // 1-hour expiration
+    });
+
     res.status(200).json({
       status: 'success',
-      token,
+      // token,
     });
     
   });
