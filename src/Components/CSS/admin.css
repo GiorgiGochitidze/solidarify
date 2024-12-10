@@ -1,0 +1,21 @@
+.adminPage{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: start;
+    align-items: start;
+    padding: 120px;
+}
+
+.adminNavbar{
+    display: flex;
+    gap:24px;
+}
+
+.listHeads{
+    list-style: none;
+}
+
+.chosen{
+    border-bottom: solid black 2px;
+}

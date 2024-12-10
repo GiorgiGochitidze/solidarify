@@ -8,27 +8,28 @@ import Locations from "./Components/Locations";
 import LawyerNums from "./Components/LawyerNums";
 import ArrestedLost from "./Components/ArrestedLost";
 import { useEffect } from "react";
-import axios from "axios";
-import { jwtDecode } from "jwt-decode";
+// import axios from "axios";
+// import { jwtDecode } from "jwt-decode";
 import LogIn from "./Components/LogIn";
+import Admin from "./Components/Admin";
 
 function App() {
 
   useEffect(() => {
-    setTimeout(() => {
+    // setTimeout(() => {
 
-      axios
-      .post("http://localhost:5000/api/users/login", {
-        email: "solidarify@gmail.com",
-        password: "1234",
-      })
-      .then((response) => {
-        console.log(jwtDecode(response.data.token));
-      })
-      .catch((err) => {
-        console.log("Something went wrong: ", err);
-      });
-    }, 1000)
+    //   axios
+    //   .post("http://localhost:5000/api/users/login", {
+    //     email: "solidarify@gmail.com",
+    //     password: "1234",
+    //   })
+    //   .then((response) => {
+    //     console.log(jwtDecode(response.data.token));
+    //   })
+    //   .catch((err) => {
+    //     console.log("Something went wrong: ", err);
+    //   });
+    // }, 1000)
     }, []);
   
 
@@ -42,6 +43,7 @@ function App() {
         <Route path="/LawyerNums" element={<LawyerNums />} />
         <Route path="/Lost&Arrested" element={<ArrestedLost />} />
         <Route path="/Login" element = {<LogIn/>} />
+        <Route path="/admin" element = {<Admin/>} />
       </Routes>
     </Router>
   );
