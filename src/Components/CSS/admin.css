@@ -41,7 +41,13 @@
 .adminFormBox{
     display: flex;
     justify-content: start;
-    margin-top: 60px;
+    margin-top: 20px;
     width: 100%;
     height: 100%;
 }
+
+@media (min-width: 768px) {
+    .adminFormBox{
+        margin-top: 40px;
+    }
+  }

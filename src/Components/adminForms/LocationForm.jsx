@@ -47,7 +47,7 @@ function LocationForm() {
 
   return (
     <form className="LocationForm" onSubmit={handleSubmit(onSubmit)}>
-      <div className="form-group inputGroup">
+      <div className=" inputGroup">
         <label htmlFor="location" className="form-label">
           მისამართი *
         </label>
@@ -56,13 +56,13 @@ function LocationForm() {
           id="location"
           name="location"
           {...register("location", { required: true })}
-          className={`form-input ${locationError && 'locationInputError'} `}
+          className={`location-form-input ${locationError?' locationInputErrorBorder ': ' locationInputBorder '} `} 
         />
         {locationError && (
           <p className="locationError">მისამართი აუცილებელია</p>
         )}
       </div>
-      <div className="threeInput form-group">
+      <div className="locationTwoInput ">
         <div>
           <label htmlFor="latitude" className="form-label">
             კოორდინატები (latitude)
@@ -72,7 +72,7 @@ function LocationForm() {
             id="latitude"
             name="latitude"
             {...register("latitude")}
-            className="form-input"
+            className="location-form-input"
           />
         </div>
 
@@ -84,13 +84,13 @@ function LocationForm() {
             type="text"
             id="longitude"
             name="longitude"
-            className="form-input"
+            className="location-form-input"
             {...register("longitude")}
           />
         </div>
       </div>
 
-      <div className="form-group inputGroup">
+      <div className=" inputGroup">
         <label htmlFor="time" className="form-label">
           დრო *
         </label>
@@ -98,7 +98,7 @@ function LocationForm() {
           type="text"
           id="time"
           name="time"
-          className={`form-input ${timeError && 'locationInputError'} `}
+          className={`location-form-input ${timeError?' locationInputErrorBorder ': ' locationInputBorder '} `}
           {...register("time", { required: true })}
         />
         {timeError && <p className="locationError">დრო აუცილებელია</p>}
