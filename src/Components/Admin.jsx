@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './CSS/admin.css'
 // import InfoForm from './adminForms/InfoForm';
 import LocationForm from './adminForms/LocationForm';
+import LawyerForm from './adminForms/LawyerForm';
 
 function Admin() {
 
@@ -17,7 +18,8 @@ function Admin() {
       </div>
       <div className='adminFormBox' >
         {/* <InfoForm/> */}
-        <LocationForm/>
+        {/* <LocationForm/> */}
+        <LawyerForm/>
       </div>
     </section>
   );
