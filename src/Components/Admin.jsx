@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './CSS/admin.css'
-import InfoForm from './adminForms/InfoForm';
-// import LocationForm from './adminForms/LocationForm';
+// import InfoForm from './adminForms/InfoForm';
+import LocationForm from './adminForms/LocationForm';
 
 function Admin() {
 
@@ -16,8 +16,8 @@ function Admin() {
           <li className={`listHeads ${Form == 4?'chosen':''} `} onClick={()=>{setForm(4)}} >დონაციები</li>
       </div>
       <div className='adminFormBox' >
-        <InfoForm/>
-        {/* <LocationForm/> */}
+        {/* <InfoForm/> */}
+        <LocationForm/>
       </div>
     </section>
   );

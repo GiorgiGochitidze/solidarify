@@ -52,7 +52,7 @@ function InfoForm() {
         <div className="threeInput" >
         <div className="twoInput" >
       <div className=" inputGroup">
-        <label htmlFor="title" className="form-label">სათაური</label>
+        <label htmlFor="title" className="form-label">სათაური *</label>
         <input
           type="text"
           id="title"
@@ -64,7 +64,7 @@ function InfoForm() {
         {titleError && <p className="infoError" >სათაური აუცილებელია</p>}
       </div>
       <div className=" inputGroup" >
-        <label htmlFor="src" className="form-label">წყარო</label>
+        <label htmlFor="src" className="form-label">წყარო *</label>
         <input
           type="text"
           id="src"
@@ -93,7 +93,7 @@ function InfoForm() {
       </div>
         
       <div className=" inputGroup form-group">
-        <label htmlFor="details" className="form-label">დეტალები</label>
+        <label htmlFor="details" className="form-label">დეტალები *</label>
         <textarea
           id="details"
           name="details"
