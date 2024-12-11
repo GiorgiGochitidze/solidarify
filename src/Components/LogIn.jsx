@@ -3,7 +3,7 @@ import './CSS/login.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function LogIn() {
+function LogIn({setLogIn}) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -20,7 +20,9 @@ function LogIn() {
         { withCredentials: true }
     )
         setError('')
+        setLogIn(true)
         navigate('/')
+
     }catch(err){
         console.log(err)
         setError('Wrong email or password')

@@ -7,7 +7,7 @@ import InfosPage from "./Components/InfosPage";
 import Locations from "./Components/Locations";
 import LawyerNums from "./Components/LawyerNums";
 import ArrestedLost from "./Components/ArrestedLost";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // import axios from "axios";
 // import { jwtDecode } from "jwt-decode";
 import LogIn from "./Components/LogIn";
@@ -15,24 +15,27 @@ import Admin from "./Components/Admin";
 
 function App() {
 
+  const [logIn,setLogIn] = useState(false)
+
+  
+
   useEffect(() => {
     const interval = 1000 * 60 * 30
     setInterval(()=>{
-     
     },interval ) 
   }, []);
   
 
   return (
     <Router>
-      <Navbar />
+      <Navbar logIn={logIn} setLogIn={setLogIn} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/InfosPage" element={<InfosPage />} />
         <Route path="/Locations" element={<Locations />} />
         <Route path="/LawyerNums" element={<LawyerNums />} />
         <Route path="/Lost&Arrested" element={<ArrestedLost />} />
-        <Route path="/Login" element = {<LogIn/>} />
+        <Route path="/Login" element = {<LogIn setLogIn={setLogIn} />} />
         <Route path="/admin" element = {<Admin/>} />
       </Routes>
     </Router>
