@@ -23,18 +23,29 @@ exports.protect = catchAsync(async (req, res, next) => {
     }
   
     // 2) Verification(validation) of token
+    try{
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+
     // 3) Check if user still exist
   
     if (!process.env.EMAIL == decoded.email || !process.env.PASS == decoded.password ){
       return next(
-        new AppError('the user belonging to this token no longer exists', 404),
+        new AppError('the user belonging to this token does not exists', 404),
       );
     }
   
     // 4) Check if user changed password after the token was issued
   
     next();
+
+    }catch{
+
+      res.status(200).json({
+        status: 'failure',
+        message: 'Token is not valid',
+      });
+
+    }
   });
 
 exports.verifyToken = catchAsync(async(req,res,next)=>{
