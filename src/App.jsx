@@ -12,16 +12,26 @@ import { useEffect, useState } from "react";
 // import { jwtDecode } from "jwt-decode";
 import LogIn from "./Components/LogIn";
 import Admin from "./Components/Admin";
+import axios from "axios";
 
 function App() {
 
   const [logIn,setLogIn] = useState(false)
 
-  
+  const checkToken = async()=>{
+    try{
+      const response = await axios.get('http://localhost:5000/api/users/verifyToken',{withCredentials:true})
+      if(response.data.status == 'success')setLogIn(true)
+    }catch(err){
+      console.log(err)
+    }
+  }
 
   useEffect(() => {
     const interval = 1000 * 60 * 30
+    checkToken()
     setInterval(()=>{
+      checkToken
     },interval ) 
   }, []);
   
@@ -36,7 +46,7 @@ function App() {
         <Route path="/LawyerNums" element={<LawyerNums />} />
         <Route path="/Lost&Arrested" element={<ArrestedLost />} />
         <Route path="/Login" element = {<LogIn setLogIn={setLogIn} />} />
-        <Route path="/admin" element = {<Admin/>} />
+        <Route path="/admin" element = {<Admin setLogIn={setLogIn} />} />
       </Routes>
     </Router>
   );

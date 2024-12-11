@@ -4,14 +4,36 @@ import InfoForm from './adminForms/InfoForm';
 import LocationForm from './adminForms/LocationForm';
 import LawyerForm from './adminForms/LawyerForm';
 import DonationForm from './adminForms/DonationForm';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-function Admin() {
+function Admin({setLogIn}) {
 
     const [form,setForm] = useState(1)
+    const navigate = useNavigate()
+
+    const checkToken = async()=>{
+      try{
+        const response = await axios.get('http://localhost:5000/api/users/verifyToken',{withCredentials:true})
+        console.log(response.data);
+        
+        if(response.data.status == 'success'){
+          setLogIn(true)
+        }else{
+          setLogIn(false)
+          navigate('/')
+        }
+      }catch(err){
+        console.log(err)
+        setLogIn(false)
+          navigate('/home')
+      }
+    }
 
     useEffect(()=>{
         const formPage = localStorage.getItem('form')
         if(formPage)setForm(Number(formPage))
+        checkToken()
     },[])
 
     
