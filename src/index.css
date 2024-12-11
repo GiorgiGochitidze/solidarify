@@ -6,6 +6,15 @@
   font-style: normal;
 }
 
+body{
+  min-height: 100vh;
+}
+
+#root{
+  min-height: 100vh;
+}
+
 * {
   font-family: "Georgian", sans-serif;
+  box-sizing: border-box;
 }
