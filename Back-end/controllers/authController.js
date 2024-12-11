@@ -37,3 +37,34 @@ exports.protect = catchAsync(async (req, res, next) => {
   
     next();
   });
+
+exports.verifyToken = catchAsync(async(req,res,next)=>{
+
+  let token = req.cookies.authToken
+
+  if(!token){
+    return next(
+      new AppError('Your are not logged in , Please log in to get access', 401)
+    )
+  }
+  
+  try {
+    // Promisify the jwt.verify method and verify the token
+    const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+
+    // If the token is valid, send a success response with decoded data
+    res.status(200).json({
+      status: 'success',
+      message: 'Token is valid',
+    });
+
+  } catch (err) {
+    // If the token is invalid or expired, throw an error
+    res.status(200).json({
+      status: 'failure',
+      message: 'Token is not valid',
+    });
+  }
+
+
+})
