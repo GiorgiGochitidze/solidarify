@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import '../CSS/adminForms/lawyerForm.css'
+import axios from 'axios'
 
 function LawyerForm() {
 
@@ -15,17 +16,29 @@ function LawyerForm() {
       const [fullNameError,setFullNameError] = useState(false)
       const [contactError,setContactError] = useState(false)
 
+      const postInfo = async (data) => {
+        try {
+          await axios.post('http://localhost:5000/api/lawyers', data, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+            withCredentials: true,
+          });
+        } catch (err) {
+          console.log(err);
+        }
+      }
+
       const onSubmit = (data) =>{
         console.log(data)
 
 
         const dataForm = new FormData()
-        dataForm.append('fullName',data.title)
+        dataForm.append('full_Name',data.fullName)
         imageInput.current.files[0] && dataForm.append('image',imageInput.current.files[0])
-        dataForm.append('contact',data.src)
-        data.details && dataForm.append('details',data.details)
-        
-        console.log(dataForm)
+        dataForm.append('contact',data.contact)
+        dataForm.append('details',data.details)
+        postInfo(dataForm)
       }
 
       useEffect(() => {
