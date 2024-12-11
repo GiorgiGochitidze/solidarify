@@ -39,7 +39,7 @@ function LawyerForm() {
 
   return (
     <form className="LawyerForm" onSubmit={handleSubmit(onSubmit)} >
-    <div className="threeInput" >
+    <div className="lawyerThreeInput" >
     <div className="twoInput" >
   <div className=" inputGroup">
     <label htmlFor="fullName" className="form-label">სახელი და გვარი *</label>
@@ -48,7 +48,7 @@ function LawyerForm() {
       id="fullName"
       name="fullName"
       {...register('fullName',{required:true})}
-      className={`form-input ${fullNameError && 'lawyerInputError'} `}
+      className={`lawyer-form-input ${fullNameError ?'lawyerInputErrorBorder':' lawyerInputBorder'} `}
 
     />
     {fullNameError && <p className="lawyerError" >სახელი აუცილებელია</p>}
@@ -60,7 +60,7 @@ function LawyerForm() {
       id="contact"
       name="contact"
       {...register('contact',{required:true})}
-      className={`form-input ${contactError && 'lawyerInputError'} `}
+      className={`lawyer-form-input ${contactError ?'lawyerInputErrorBorder':' lawyerInputBorder'} `}
       
     />
     {contactError && <p className="lawyerError">საკონტაქტო აუცილებელია</p>}

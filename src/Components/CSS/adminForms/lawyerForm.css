@@ -1,89 +1,98 @@
-.LawyerForm{
-    width: 100%;
+.LawyerForm {
+  width: 100%;
 }
 
-.threeInput{
-display: flex;
-gap:80px
+.lawyerThreeInput {
+  display: flex;
+  gap: 30px;
 }
 
-.twoInput{
-display: flex;
-flex-direction: column;
-gap:10px
+@media (min-width: 768px) {
+  .lawyerThreeInput {
+    gap: 80px;
+  }
+}
+
+.twoInput {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .form-group {
-margin-top: 40px;
+  margin-top: 40px;
 }
 
 /* Label styles */
 .form-label {
-display: block;
-margin-bottom: 8px;
-font-weight: bold;
-color: #333;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
 }
 
 /* Input styles */
-.form-input {
-width: 200px;
-height: 30px;
-border:solid black 2px;
-border-radius: 15px;
-padding:  2px 10px;
-outline: none;
+.lawyer-form-input {
+  width: 200px;
+  height: 30px;
+  border-radius: 15px;
+  padding: 2px 10px;
+  outline: none;
 }
 
-.lawyerInputError{
-    border:solid red 2px;
+.lawyerInputBorder {
+    border: solid black 2px;
 }
 
-.form-textarea{
-width: 100%;
-/* height: 100%; */
-border:solid black 2px;
-border-radius: 15px;
-padding:  2px 10px;
-outline:none
+.lawyerInputErrorBorder {
+  border: solid red 2px;
 }
 
-.formImageBox{
-width:fit-content;
-border:solid black 2px;
-border-radius: 15px;
-padding:  2px 10px;
-position: relative;
-}
-.imageInput{
-display: none;
+.form-textarea {
+  width: 100%;
+  /* height: 100%; */
+  border: solid black 2px;
+  border-radius: 15px;
+  padding: 2px 10px;
+  outline: none;
 }
 
-.inputGroup{
-padding-bottom: 14px;
-position: relative;
+.formImageBox {
+  width: fit-content;
+  border: solid black 2px;
+  border-radius: 15px;
+  padding: 2px 10px;
+  position: relative;
+}
+.imageInput {
+  display: none;
 }
 
-.detailSubmitBox{
-display: flex;
-flex-direction: column;
-height: 100%;
+.inputGroup {
+  padding-bottom: 20px;
+  position: relative;
 }
 
-.submitBox{
-width: 100%;
-display: flex;
-justify-content: end;
+.detailSubmitBox {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.submit{
-width: fit-content;
+.submitBox {
+  width: 100%;
+  display: flex;
+  justify-content: end;
 }
 
-.lawyerError{
-font-size: 12px;
-color: red;
-position:absolute;
-bottom: 0;
-left: 0;
+.submit {
+  width: fit-content;
+}
+
+.lawyerError {
+  font-size: 12px;
+  color: red;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
