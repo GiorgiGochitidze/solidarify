@@ -30,6 +30,10 @@ padding:  2px 10px;
 outline: none;
 }
 
+.locationInputError{
+    border:solid red 2px;
+}
+
 .inputGroup{
     padding-bottom: 14px;
     position: relative;

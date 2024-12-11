@@ -58,7 +58,7 @@ function InfoForm() {
           id="title"
           name="title"
           {...register('title',{required:true})}
-          className="form-input"
+          className={`form-input ${titleError && 'infoInputError'} `}
 
         />
         {titleError && <p className="infoError" >სათაური აუცილებელია</p>}
@@ -70,7 +70,7 @@ function InfoForm() {
           id="src"
           name="src"
           {...register('src',{required:true})}
-          className="form-input"
+          className={`form-input ${srcError && 'infoInputError'} `}
           
         />
         {srcError && <p className="infoError">წყარო აუცილებელია</p>}
@@ -98,7 +98,7 @@ function InfoForm() {
           id="details"
           name="details"
           {...register('details',{required:true})}
-          className="form-textarea"
+          className={`form-textarea ${detailsError && 'infoInputError'} `}
           rows="7"
           
         ></textarea>

@@ -57,7 +57,7 @@ function LocationForm() {
           id="location"
           name="location"
           {...register("location", { required: true })}
-          className="form-input"
+          className={`form-input ${locationError && 'locationInputError'} `}
         />
         {locationError && (
           <p className="locationError">მისამართი აუცილებელია</p>
@@ -99,7 +99,7 @@ function LocationForm() {
           type="text"
           id="time"
           name="time"
-          className="form-input"
+          className={`form-input ${timeError && 'locationInputError'} `}
           {...register("time", { required: true })}
         />
         {timeError && <p className="locationError">დრო აუცილებელია</p>}
