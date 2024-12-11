@@ -4,18 +4,35 @@
     height: 100vh;
     justify-content: start;
     align-items: start;
-    padding: 120px 120px 120px 120px;
+    /* padding: 120px 120px 120px 120px; */
+    padding: 120px 20px 20px 20px;
 }
+
+@media (min-width: 768px) {
+    .adminPage{
+        padding: 120px 120px 120px 120px;
+      }
+  }
 
 .adminNavbar{
     display: flex;
-    gap:24px;
+    /* gap:24px; */
+    gap:10px
 }
+
+
 
 .listHeads{
     list-style: none;
     cursor: pointer;
+    font-size: 12px;/* mobile */
 }
+
+@media (min-width: 768px) {
+    .listHeads{
+        font-size: 16px;
+      }
+  }
 
 .chosen{
     border-bottom: solid black 2px;

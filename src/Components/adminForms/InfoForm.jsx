@@ -48,28 +48,28 @@ function InfoForm() {
 
   return (
       <form className="infoForm" onSubmit={handleSubmit(onSubmit)} >
-        <div className="threeInput" >
-        <div className="twoInput" >
-      <div className=" inputGroup">
+        <div className="infoThreeInput" >
+        <div className="infoTwoInput" >
+      <div className=" infoInputGroup">
         <label htmlFor="title" className="form-label">სათაური *</label>
         <input
           type="text"
           id="title"
           name="title"
           {...register('title',{required:true})}
-          className={`form-input ${titleError && 'infoInputError'} `}
+          className={`info-form-input ${titleError?' infoInputErrorBorder ': ' infoInputBorder '} `}
 
         />
         {titleError && <p className="infoError" >სათაური აუცილებელია</p>}
       </div>
-      <div className=" inputGroup" >
+      <div className=" infoInputGroup" >
         <label htmlFor="src" className="form-label">წყარო *</label>
         <input
           type="text"
           id="src"
           name="src"
           {...register('src',{required:true})}
-          className={`form-input ${srcError && 'infoInputError'} `}
+          className={`info-form-input ${srcError?' infoInputErrorBorder ': ' infoInputBorder '} `}
           
         />
         {srcError && <p className="infoError">წყარო აუცილებელია</p>}
@@ -91,13 +91,13 @@ function InfoForm() {
       </div>
       </div>
         
-      <div className=" inputGroup form-group">
+      <div className=" infoInputGroup form-group">
         <label htmlFor="details" className="form-label">დეტალები *</label>
         <textarea
           id="details"
           name="details"
           {...register('details',{required:true})}
-          className={`form-textarea ${detailsError && 'infoInputError'} `}
+          className={` info-form-textarea ${detailsError?' infoInputErrorBorder ': ' infoInputBorder '} `}
           rows="7"
           
         ></textarea>
