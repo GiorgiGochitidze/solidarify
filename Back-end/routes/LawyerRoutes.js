@@ -8,7 +8,7 @@ const router = express.Router()
 
 router
     .route('/')
-    .post(getLawyers)
+    .get(getLawyers)
     .post(protect,createLawyer)
 
 router

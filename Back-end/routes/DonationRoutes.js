@@ -7,7 +7,7 @@ const router = express.Router()
 
 router
     .route('/')
-    .post(getDonations)
+    .get(getDonations)
     .post(protect,createDonation)
 
 router

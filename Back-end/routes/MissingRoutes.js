@@ -9,7 +9,7 @@ router.use(protect)
 
 router
     .route('/')
-    .post(getMissingPersons)
+    .get(getMissingPersons)
     .post(protect,createMissing)
 
 router

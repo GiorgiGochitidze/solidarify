@@ -1,6 +1,9 @@
+const multer = require('multer');
 const Lawyer = require('../models/Lawyer')
 const AppError = require("../utils/appError");
 const catchAsync = require("../utils/catchAsync");
+
+const cloudinary = require('cloudinary').v2
 
 // const getLawyers = function (req, res) {
 //   Lawyer.find()

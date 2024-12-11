@@ -8,7 +8,7 @@ const router = express.Router()
 
 router
     .route('/')    
-    .post(getLocations)
+    .get(getLocations)
     .post(protect,createLocation)
 
 router
