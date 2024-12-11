@@ -5,15 +5,14 @@ const {protect} = require('../controllers/authController')
 
 const router = express.Router()
 
-router.use(protect)
 
 router
     .route('/')
     .post(getLawyers)
-    .post(createLawyer)
+    .post(protect,createLawyer)
 
 router
     .route('/:id')
-    .delete(deleteLawyer)
+    .delete(protect,deleteLawyer)
 
 module.exports = router

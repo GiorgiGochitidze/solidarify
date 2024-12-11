@@ -40,10 +40,9 @@ exports.protect = catchAsync(async (req, res, next) => {
 
     }catch{
 
-      res.status(200).json({
-        status: 'failure',
-        message: 'Token is not valid',
-      });
+      return next(
+        new AppError('Token is invalid or expired', 401),
+      );
 
     }
   });
