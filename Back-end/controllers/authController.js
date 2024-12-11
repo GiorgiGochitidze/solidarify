@@ -42,9 +42,10 @@ exports.verifyToken = catchAsync(async(req,res,next)=>{
   let token = req.cookies.authToken
   console.log(token)
   if(!token){
-    return next(
-      new AppError('Your are not logged in , Please log in to get access', 401)
-    )
+    res.status(200).json({
+      status: 'failure',
+      message: 'There is no token',
+    });
   }
   
   try {
