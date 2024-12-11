@@ -17,6 +17,8 @@ function DonationForm() {
         try {
           await axios.post("http://localhost:5000/api/donations", {
             donationReport:data.donationReport
+          },{
+            withCredentials:true
           });
         } catch (err) {
           console.log(err)
@@ -26,7 +28,7 @@ function DonationForm() {
       const onSubmit = (data) => {
         console.log(data);
         setDonationError(false);
-        // postData(data)
+        postData(data)
       };
     
       useEffect(() => {
