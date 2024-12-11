@@ -1,11 +1,10 @@
+const multer = require('multer');
 const Info = require('../models/Info')
 const AppError = require("../utils/appError");
 const catchAsync = require("../utils/catchAsync");
-// const getInfos = function (req, res) {
-//   Info.find()
-//     .then((infos) => res.status(200).json(infos))
-//     .catch((error) => res.status(500).json({ message: 'Error fetching infos' }))
-// }
+
+const cloudinary = require('cloudinary').v2
+
 
 exports.getInfos = catchAsync(async(req,res,next)=>{
   const doc = await Info.find()
@@ -33,9 +32,37 @@ exports.deleteInfo = catchAsync(async(req,res,next)=>{
 
 })
 
-exports.createInfo = catchAsync(async(req,res,next)=>{
+
+const storage = multer.memoryStorage(); // Store files in memory (or use diskStorage for file uploads)
+const upload = multer({ storage });
+exports.createInfo =[upload.single('image'),catchAsync(async(req,res,next)=>{
   
-  const doc = await Info.create(req.body)
+  const data = {...req.body}
+
+  if(req.file){
+  cloudinary.config({
+    cloud_name:process.env.CLOUD_NAME,
+    api_key:process.env.CLOUDINARY_API_KEY,
+    api_secret:process.env.CLOUDINARY_API_SECRET
+  })
+  
+  const results = await new Promise((resolve,reject)=>{
+    const uploadStream = cloudinary.uploader.upload_stream(
+      {resource_type:'auto'},
+      (error,result) =>{
+        if(error){
+          reject(error)
+        }else{
+          resolve(result)
+        }
+      }
+    )
+    uploadStream.end(req.file.buffer)
+  })
+  data.image = results.secure_url
+  }
+  const doc = await Info.create(data)
+
 
   res.status(201).json({
     status:'succes',
@@ -43,6 +70,7 @@ exports.createInfo = catchAsync(async(req,res,next)=>{
   })
 
 })
+]
 
 // module.exports = {
 //   getInfos

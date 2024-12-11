@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form"
 import '../CSS/adminForms/infoForm.css'
 import { useEffect, useRef, useState } from "react"
+import axios from "axios"
 
 function InfoForm() {
 
@@ -16,20 +17,32 @@ function InfoForm() {
       const [srcError,setSrcError] = useState(false)
       const [detailsError,setDetailsError] = useState(false)
 
+      const postInfo = async (data) => {
+        try {
+          await axios.post('http://localhost:5000/api/infos', data, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+            withCredentials: true,
+          });
+        } catch (err) {
+          console.log(err);
+        }
+      }
+
       const onSubmit = (data) =>{
-        console.log(data)
 
         setDetailsError(false)
         setTitleError(false)
         setSrcError(false)
 
         const dataForm = new FormData()
-        dataForm.append('titile',data.title)
+        dataForm.append('title',data.title)
         imageInput.current.files[0] && dataForm.append('image',imageInput.current.files[0])
         dataForm.append('src',data.src)
         dataForm.append('details',data.details)
+        postInfo(dataForm)
         
-        console.log(dataForm)
       }
 
 
