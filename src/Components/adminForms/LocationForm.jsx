@@ -23,6 +23,8 @@ function LocationForm() {
         location: data.location,
         coordinates,
         time: data.time,
+      },{
+        withCredentials:true
       });
     } catch (err) {
       console.log(err)
@@ -32,8 +34,8 @@ function LocationForm() {
   const onSubmit = (data) => {
     console.log(data);
     setLocationError(false);
-    setTimeError(true);
-    // postData(data)
+    setTimeError(false);
+    postData(data)
   };
 
   useEffect(() => {
