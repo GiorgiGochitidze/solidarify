@@ -40,3 +40,17 @@ exports.login = catchAsync(async (req, res, next) => {
     });
     
   });
+
+  exports.logout = catchAsync(async (req, res, next) => {
+    // Clear the authToken cookie
+    res.clearCookie('authToken', {
+      httpOnly: true, // Ensure the cookie can only be accessed by the server
+      secure: process.env.NODE_ENV === 'production', // Use HTTPS in production
+      sameSite: 'Strict', // Prevent CSRF
+    });
+  
+    res.status(200).json({
+      status: 'success',
+      message: 'You have been logged out.',
+    });
+  });
