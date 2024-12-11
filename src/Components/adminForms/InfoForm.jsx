@@ -43,7 +43,6 @@ function InfoForm() {
         if(errors.title){
             setDetailsError(true)
         }
-          console.log(errors)
       },[errors])
 
 

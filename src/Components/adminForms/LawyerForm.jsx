@@ -35,11 +35,10 @@ function LawyerForm() {
         if (errors.contact) {
             setContactError(true);
         }
-        console.log(errors);
       }, [errors])
 
   return (
-    <form className="infoForm" onSubmit={handleSubmit(onSubmit)} >
+    <form className="LawyerForm" onSubmit={handleSubmit(onSubmit)} >
     <div className="threeInput" >
     <div className="twoInput" >
   <div className=" inputGroup">

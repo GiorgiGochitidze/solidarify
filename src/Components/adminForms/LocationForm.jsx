@@ -43,7 +43,6 @@ function LocationForm() {
     if (errors.time) {
       setTimeError(true);
     }
-    console.log(errors);
   }, [errors]);
 
   return (
