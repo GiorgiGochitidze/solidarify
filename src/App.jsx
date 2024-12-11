@@ -31,7 +31,7 @@ function App() {
     const interval = 1000 * 60 * 30
     checkToken()
     setInterval(()=>{
-      checkToken
+      if(logIn)checkToken()
     },interval ) 
   }, []);
   
