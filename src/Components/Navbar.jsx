@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 import './CSS/navbar.css'
 
-
 const Navbar = () => {
-    console.log(document.cookie.split('='))
     const LinkStyles = {
         color: 'white',
         textDecoration: "none"
@@ -18,7 +16,7 @@ const Navbar = () => {
                 <Link style={LinkStyles} to='/LawyerNums'><p>იურისტების ნომრები</p></Link>
                 <Link style={LinkStyles} to='#'><p>კონტაქტი</p></Link>
                 <Link style={LinkStyles} to='/Login'><p>შესვლა</p></Link>
-                {document.cookie?.split('=')[0] == 'token' && <Link style={LinkStyles} to='/Admin'><p>ადმინი</p></Link>}
+                <Link style={LinkStyles} to='/Admin'><p>ადმინი</p></Link>
             </nav>
         </header>
      );

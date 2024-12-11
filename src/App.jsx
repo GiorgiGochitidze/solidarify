@@ -16,21 +16,11 @@ import Admin from "./Components/Admin";
 function App() {
 
   useEffect(() => {
-    // setTimeout(() => {
-
-    //   axios
-    //   .post("http://localhost:5000/api/users/login", {
-    //     email: "solidarify@gmail.com",
-    //     password: "1234",
-    //   })
-    //   .then((response) => {
-    //     console.log(jwtDecode(response.data.token));
-    //   })
-    //   .catch((err) => {
-    //     console.log("Something went wrong: ", err);
-    //   });
-    // }, 1000)
-    }, []);
+    const interval = 1000 * 60 * 30
+    setInterval(()=>{
+     
+    },interval ) 
+  }, []);
   
 
   return (

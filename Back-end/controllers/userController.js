@@ -8,7 +8,9 @@ require('dotenv').config();
 const signToken = () =>{
     const email = process.env.EMAIL
     const password = process.env.PASS
-    return jwt.sign({email,password},process.env.JWT_SECRET)
+    return jwt.sign({email,password},process.env.JWT_SECRET,{
+      expiresIn: '1h' // Set an appropriate expiration
+    })
 }
 
 exports.login = catchAsync(async (req, res, next) => {
