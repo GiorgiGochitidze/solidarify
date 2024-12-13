@@ -4,15 +4,14 @@ const express = require('express')
 
 const router = express.Router()
 
-router.use(protect)
 
 router
     .route('/')
-    .post(getInfos)
-    .post(createInfo)
+    .get(getInfos)
+    .post(protect,createInfo)
 
 router
     .route('/:id')
-    .delete(deleteInfo)
+    .delete(protect,deleteInfo)
 
 module.exports = router

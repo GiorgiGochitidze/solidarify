@@ -5,15 +5,14 @@ const {protect} = require('../controllers/authController')
 
 const router = express.Router()
 
-router.use(protect)
 
 router
     .route('/')    
-    .post(getLocations)
-    .post(createLocation)
+    .get(getLocations)
+    .post(protect,createLocation)
 
 router
     .route('/:id')
-    .delete(deleteLocation)
+    .delete(protect,deleteLocation)
 
 module.exports = router

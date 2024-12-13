@@ -9,11 +9,11 @@ router.use(protect)
 
 router
     .route('/')
-    .post(getMissingPersons)
-    .post(createMissing)
+    .get(getMissingPersons)
+    .post(protect,createMissing)
 
 router
     .route('/:id')
-    .delete(deleteMissing)
+    .delete(protect,deleteMissing)
 
 module.exports = router

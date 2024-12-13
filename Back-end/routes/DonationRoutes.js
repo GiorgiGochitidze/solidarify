@@ -5,15 +5,13 @@ const {protect} = require('../controllers/authController')
 
 const router = express.Router()
 
-router.use(protect)
+router
+    .route('/')
+    .get(getDonations)
+    .post(protect,createDonation)
 
 router
     .route('/')
-    .post(getDonations)
-    .post(createDonation)
-
-router
-    .route('/')
-    .delete(deleteDonation)
+    .delete(protect,deleteDonation)
 
 module.exports = router

@@ -1,0 +1,101 @@
+    .infoForm{
+        width: 100%;
+    }
+
+  .infoThreeInput{
+    display: flex;
+    /* gap:80px */
+    gap:30px
+  }
+
+  @media (min-width: 768px) {
+    .infoThreeInput{
+        display: flex;
+        gap:80px;
+      }
+  }
+
+  .infoTwoInput{
+    display: flex;
+    flex-direction: column;
+    gap:10px
+  }
+
+  .form-group {
+    margin-top: 40px;
+  }
+  
+  /* Label styles */
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Input styles */
+  .info-form-input {
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    padding:  2px 10px;
+    outline: none;
+  }
+
+  .infoInputBorder{
+    border:solid black 2px;
+}
+
+  .infoInputErrorBorder{
+    border:solid red 2px;
+}
+
+
+  .info-form-textarea{
+    width: 100%;
+    /* height: 100%; */
+    /* border:solid black 2px; */
+    border-radius: 15px;
+    padding:  2px 10px;
+    outline:none
+  }
+
+  .formImageBox{
+    width:fit-content;
+    border:solid black 2px;
+    border-radius: 15px;
+    padding:  2px 10px;
+    position: relative;
+  }
+  .imageInput{
+    display: none;
+  }
+
+  .infoInputGroup{
+    padding-bottom: 20px;
+    position: relative;
+  }
+
+  .detailSubmitBox{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .submitBox{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+
+  .submit{
+    width: fit-content;
+  }
+
+  .infoError{
+    font-size: 12px;
+    color: red;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+  }

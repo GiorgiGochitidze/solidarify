@@ -1,0 +1,70 @@
+.LocationForm{
+    width: 100%;
+}
+
+.locationTwoInput{
+display: flex;
+flex-direction: column;
+gap:30px;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .locationTwoInput{
+        flex-direction: row;
+      }
+  }
+
+
+/* .form-group {
+margin-top: 40px;
+} */
+
+/* Label styles */
+.form-label {
+display: block;
+margin-bottom: 8px;
+font-weight: bold;
+color: #333;
+}
+
+/* Input styles */
+.location-form-input {
+width: 200px;
+height: 30px;
+border-radius: 15px;
+padding:  2px 10px;
+outline: none;
+}
+
+.locationInputBorder{
+    border:solid black 2px;
+}
+
+.locationInputErrorBorder{
+    border:solid red 2px;
+}
+
+.inputGroup{
+    padding-bottom: 20px;
+    position: relative;
+  }
+
+.submitBox{
+width: 100%;
+display: flex;
+justify-content: end;
+}
+
+.submit{
+width: fit-content;
+}
+
+.locationError{
+font-size: 12px;
+color: red;
+position:absolute;
+bottom: 0;
+left: 0;
+}

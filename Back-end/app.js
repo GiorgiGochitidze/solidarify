@@ -1,6 +1,9 @@
 const express = require('express')
-require('dotenv').config()
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
+
+
+require('dotenv').config()
 
 // Routes
 const infoRoutes = require('./routes/infoRoutes')
@@ -16,16 +19,23 @@ const app = express()
 const mongoose = require('mongoose')
 
 // Enable CORS for all origins
-app.use(cors());
+const corsOptions = {
+  origin: 'http://localhost:5173',  // Replace with your front-end URL
+  credentials: true,  // Allows cookies and headers to be sent
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
+app.use(cookieParser());
+
 const DBPass = process.env.DB_USER_PASS
 
-const uri = `mongodb+srv://webcanvas555:${DBPass}@cluster0.l4wf4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const url = `mongodb+srv://webcanvas555:${DBPass}@cluster0.l4wf4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 mongoose
-  .connect("mongodb://localhost:27017/Solidarify")
+  .connect(url)
   .then(() => console.log('MongoDB connected'))
   .catch((error) => {
     console.error('Error:', error.message)
