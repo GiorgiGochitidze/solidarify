@@ -3,7 +3,6 @@ import './CSS/home.css'
 import InfosPage from "./InfosPage";
 import Locations from "./Locations";
 import LawyerNums from "./LawyerNums";
-import ArrestedLost from "./ArrestedLost";
 import DonationInfo from "./DonationInfo";
 
 
@@ -17,8 +16,6 @@ const Home = () => {
             <Locations />
 
             <LawyerNums />
-
-            <ArrestedLost />
 
             <DonationInfo />
         </main>
