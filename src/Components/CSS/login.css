@@ -44,10 +44,10 @@
 }
 
 .submit{
-    border: solid black 2px;
+    border: 1px solid black;
     width: 70px;
     padding:  2px 10px;
-    border-radius: 15px;
+    border-radius: 5px;
 
 }
 

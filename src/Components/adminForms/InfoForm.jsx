@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form"
-import '../CSS/adminForms/infoForm.css'
+import './CSS/infoForm.css'
 import { useEffect, useRef, useState } from "react"
 import axios from "axios"
 

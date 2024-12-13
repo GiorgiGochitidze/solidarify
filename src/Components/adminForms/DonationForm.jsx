@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
-import '../CSS/adminForms/donationForm.css'
+import './CSS/donationForm.css'
 
 function DonationForm() {
 
@@ -46,6 +46,7 @@ function DonationForm() {
           type="text"
           id="donationReport"
           name="donationReport"
+          placeholder='ანგარიში'
           {...register("donationReport", { required: true })}
           className={`form-input ${donationError && 'donationInputError'} `}
         />

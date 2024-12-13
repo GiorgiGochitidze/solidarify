@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import '../CSS/adminForms/lawyerForm.css'
+import './CSS/lawyerForm.css'
 import axios from 'axios'
 
 function LawyerForm() {
@@ -60,6 +60,7 @@ function LawyerForm() {
       type="text"
       id="fullName"
       name="fullName"
+      placeholder='სახელი და გვარი'
       {...register('fullName',{required:true})}
       className={`lawyer-form-input ${fullNameError ?'lawyerInputErrorBorder':' lawyerInputBorder'} `}
 
@@ -72,6 +73,7 @@ function LawyerForm() {
       type="text"
       id="contact"
       name="contact"
+      placeholder='საკონტაქტო'
       {...register('contact',{required:true})}
       className={`lawyer-form-input ${contactError ?'lawyerInputErrorBorder':' lawyerInputBorder'} `}
       
@@ -102,6 +104,7 @@ function LawyerForm() {
       name="details"
       {...register('details')}
       className="form-textarea"
+      placeholder='დეტალები...'
       rows="7"
       
     ></textarea>

@@ -6,15 +6,12 @@ import Navbar from "./Components/Navbar";
 import InfosPage from "./Components/InfosPage";
 import Locations from "./Components/Locations";
 import LawyerNums from "./Components/LawyerNums";
-import { useEffect } from "react";
-import ArrestedLost from "./Components/ArrestedLost";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import LogIn from "./Components/LogIn";
 import Admin from "./Components/Admin";
-
 import axios from "axios";
+
 
 function App() {
 
@@ -68,7 +65,6 @@ function App() {
         <Route path="/InfosPage" element={<InfosPage />} />
         <Route path="/Locations" element={<Locations />} />
         <Route path="/LawyerNums" element={<LawyerNums />} />
-        <Route path="/Lost&Arrested" element={<ArrestedLost />} />
         <Route path="/Login" element = {<LogIn setLogIn={setLogIn} />} />
         <Route path="/admin" element = {<Admin setLogIn={setLogIn} />} />
 

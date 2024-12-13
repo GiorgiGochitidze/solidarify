@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import "../CSS/adminForms/LocationForm.css";
+import "./CSS/LocationForm.css";
 import axios from "axios";
 
 function LocationForm() {
