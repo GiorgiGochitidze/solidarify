@@ -67,3 +67,8 @@
 .showMoreBtn:hover{
     cursor: pointer;
 }
+@media screen and (max-width:822px) {
+    h1{
+        text-align: center;
+    }
+}

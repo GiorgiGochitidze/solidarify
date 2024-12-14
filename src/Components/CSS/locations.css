@@ -31,3 +31,41 @@
     display: flex;
     justify-content: right;
 }
+
+@media screen and (max-width:768px) {
+    .places-container{
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .location-description{
+        text-align: center;
+        flex-direction: row;
+    }
+    .map-container iframe {
+        width: 95%;
+    }
+    .map-container {
+        justify-content: center;
+    }
+}
+@media screen and (max-width:650px) {
+    .places-container {
+        width: 90%;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .location-description {
+        margin-left: -25px;
+        text-align: center;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .map-container {
+        margin-left: 7px;
+        justify-content: center;
+    }
+}

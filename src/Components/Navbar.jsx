@@ -1,10 +1,19 @@
 import { Link, useNavigate } from 'react-router-dom';
+import { RxHamburgerMenu } from "react-icons/rx";
 import './CSS/navbar.css'
 import axios from 'axios';
+import { IoClose } from "react-icons/io5";
+import { useState } from 'react';
 
 const Navbar = ({logIn,setLogIn}) => {
 
     const navigate = useNavigate()
+
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const responiveMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
 
     const logout  = async()=>{
         try{
@@ -25,7 +34,7 @@ const Navbar = ({logIn,setLogIn}) => {
     }
     return ( 
         <header>
-            <nav>
+            <nav className={`menu ${menuOpen ? 'open' : ''}`}>
                 <Link style={LinkStyles} to='/'><p>მთავარი</p></Link>
                 <Link style={LinkStyles} to='/InfosPage'><p>ინფორმაციები</p></Link>
                 <Link style={LinkStyles} to='/Locations'><p>ლოკაციები</p></Link>
@@ -34,6 +43,8 @@ const Navbar = ({logIn,setLogIn}) => {
                 {logIn && <Link style={LinkStyles} to='/Admin' ><p>ადმინი</p></Link>}
                 {!logIn? <Link style={LinkStyles} to='/Login'><p>შესვლა</p></Link>: <li style={LinkStyles} onClick={logout} ><p>გამოსვლა</p></li> }
             </nav>
+                <RxHamburgerMenu className={`menu-icon ${menuOpen ? 'hide' : ''}`}  onClick={responiveMenu} />
+                <IoClose className={`menu-close ${menuOpen ? 'show' : ''}`} onClick={responiveMenu}/>
         </header>
      );
 }
